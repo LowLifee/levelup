@@ -12,7 +12,7 @@ function showSlide(index) {
    $carousel.css("transform", `translateX(-${currentIndex * 100}%)`);
 }
 
-const autoAdvanceInterval = 3000;
+const autoAdvanceInterval = 5000;
 
 setInterval(function () {
    currentIndex++;

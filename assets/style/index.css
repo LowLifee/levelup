@@ -13,18 +13,6 @@ li {
    list-style: none;
 }
 
-body {
-   background: hsla(197, 100%, 63%, 1);
-
-   background: linear-gradient(90deg, hsla(197, 100%, 63%, 1) 0%, hsla(294, 100%, 55%, 1) 100%);
-
-   background: -moz-linear-gradient(90deg, hsla(197, 100%, 63%, 1) 0%, hsla(294, 100%, 55%, 1) 100%);
-
-   background: -webkit-linear-gradient(90deg, hsla(197, 100%, 63%, 1) 0%, hsla(294, 100%, 55%, 1) 100%);
-
-   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#40C9FF", endColorstr="#E81CFF", GradientType=1 );
-}
-
 .order-btn {
    border: none;
    border-radius: 18px;
@@ -55,6 +43,18 @@ body {
       padding-top: 40px;
       display: grid;
       justify-items: center;
+      position: relative;
+      width: 100%;
+
+      & .background-blue {
+         position: absolute;
+         top: 20px;
+         right: -70px;
+         width: 55%;
+         height: 100%;
+         background-color: rgba(146, 242, 255, 0.25);
+         z-index: -1;
+      }
 
       & .promo-title {
          font-family: "Roboto", sans-serif;
@@ -73,6 +73,7 @@ body {
          & .promo-info-img {
             text-align: center;
             width: 550px;
+            z-index: 1;
 
             & img {
                width: 300px;
@@ -88,10 +89,31 @@ body {
             justify-items: center;
             align-items: center;
             gap: 50px;
+            z-index: 1;
 
-            & p {
-               font-size: 24px;
-               text-align: start;
+            & .promo-info-text-description {
+               text-align: center;
+
+               & .promo-info-title {
+                  font-size: 24px;
+                  font-weight: 600;
+                  letter-spacing: 1px;
+               }
+
+               & p {
+                  font-size: 24px;
+                  text-align: start;
+                  padding: 20px;
+                  border-radius: 18px;
+               }
+            }
+
+            & button {
+               background: rgba(243, 255, 222, 0.45);
+
+               &:hover {
+                  background: rgba(199, 210, 181, 0.45);
+               }
             }
          }
       }
@@ -106,6 +128,8 @@ body {
       & .composition-items {
          display: grid;
          gap: 50px;
+         background: rgba(243, 255, 222, 0.45);
+         padding: 30px;
       }
 
       & .composition-item {
@@ -150,15 +174,20 @@ body {
 
          & .comment {
             display: grid;
+            gap: 10px;
             align-items: center;
             justify-items: center;
             width: 100%;
             flex: 0 0 100%;
+            background-color: rgba(146, 242, 255, 0.25);
+            padding: 50px;
 
             & .comment-user-img {
                width: 250px;
                height: 250px;
                object-fit: fill;
+               box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+               border-radius: 50%;
             }
 
             & .user-name {
@@ -167,11 +196,11 @@ body {
             }
 
             & .user-comment {
-               border: 1px solid #000;
                border-radius: 12px;
                padding: 20px;
                font-size: 24px;
-               background-color: #e2e3df;
+               background: rgba(243, 255, 222, 0.45);
+               box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
             }
          }
       }
@@ -182,6 +211,18 @@ body {
       justify-items: center;
       align-items: center;
       padding-top: 205px;
+      position: relative;
+      width: 100%;
+
+      & .background-b {
+         position: absolute;
+         top: 80px;
+         right: -70px;
+         width: 55%;
+         height: 97%;
+         background: rgba(243, 255, 222, 0.45);
+         z-index: -1;
+      }
 
       & .promo-2-info {
          display: flex;
@@ -195,9 +236,7 @@ body {
             background-color: #e3dfdf;
             border-radius: 12px;
             padding: 30px;
-            -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.25);
-            -moz-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.25);
-            box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
 
             & .promo-2-description-text {
                font-size: 18px;
@@ -230,11 +269,22 @@ body {
 
    & .order {
       padding: 190px 0 100px 0;
-      max-width: 1150px;
+      width: 100%;
       min-height: 1000px;
       display: flex;
       justify-content: center;
       align-items: center;
+      position: relative;
+
+      & .background-y {
+         position: absolute;
+         left: -67px;
+         bottom: 0;
+         z-index: -1;
+         width: 60%;
+         height: 80%;
+         background-color: rgba(146, 242, 255, 0.25);
+      }
 
       & .order-wrapper {
          display: grid;
@@ -322,7 +372,7 @@ body {
                justify-items: center;
                gap: 10px;
                width: 500px;
-               background-color: rgb(255 255 255 / 30%);
+               background-color: rgba(68, 66, 66, 0.3);
                backdrop-filter: blur(50px);
                padding: 80px 25px;
                border-radius: 12px;
@@ -367,5 +417,292 @@ body {
    }
    100% {
       transform: scale(0.9);
+   }
+}
+
+@media (min-width: 768px) {
+   .wrapper {
+      padding: 0 50px;
+
+      & .carusel {
+         & .carusel-wrapper {
+            & .comment {
+               padding: 30px;
+            }
+         }
+      }
+   }
+}
+
+@media (min-width: 480px) and (max-width: 768px) {
+   .wrapper {
+      padding: 0 50px;
+
+      & .promo {
+         & .promo-info {
+            & .promo-info-img {
+               width: 350px;
+
+               & img {
+                  width: 170px;
+                  height: 250px;
+               }
+            }
+
+            & .promo-info-text {
+               width: 350px;
+               height: 250px;
+               gap: 30px;
+
+               & .promo-info-text-description {
+                  & .promo-info-title {
+                     font-size: 18px;
+                  }
+
+                  & p {
+                     font-size: 18px;
+                  }
+               }
+            }
+
+            & button {
+               width: 170px;
+               height: 45px;
+               font-size: 20px;
+               border-radius: 10px;
+            }
+         }
+      }
+
+      & .composition {
+         gap: 60px;
+
+         & .composition-items {
+            gap: 40px;
+            padding: 15px;
+         }
+
+         & .composition-item {
+            max-width: 300px;
+            justify-items: center;
+
+            & .composition-item-info {
+               gap: 15px;
+
+               & img {
+                  width: 45px;
+                  height: 70px;
+               }
+
+               & p {
+                  font-size: 18px;
+               }
+            }
+
+            & button {
+               width: 80%;
+               height: 30px;
+               font-size: 20px;
+               border-radius: 10px;
+            }
+         }
+
+         & .composition-img {
+            & img {
+               width: 170px;
+               height: 250px;
+            }
+         }
+      }
+
+      & .carusel {
+         & .carusel-wrapper {
+            & .comment {
+               padding: 30px;
+            }
+         }
+      }
+   }
+}
+
+@media (max-width: 480px) {
+   .wrapper {
+      padding: 0 30px;
+
+      & .promo {
+         & .promo-title {
+            font-size: 44px;
+            z-index: 1;
+         }
+
+         & .promo-info {
+            & .promo-info-img {
+               width: 450px;
+
+               & img {
+                  width: 200px;
+                  height: 300px;
+               }
+            }
+
+            & .promo-info-text {
+               width: 450px;
+               height: 250px;
+               gap: 30px;
+
+               & .promo-info-text-description {
+                  & .promo-info-title {
+                     font-size: 24px;
+                  }
+
+                  & p {
+                     font-size: 24px;
+                  }
+               }
+            }
+
+            & button {
+               width: 200px;
+               height: 45px;
+               font-size: 26px;
+               border-radius: 10px;
+            }
+         }
+      }
+
+      & .composition {
+         gap: 40px;
+
+         & .composition-items {
+            gap: 40px;
+            padding: 15px;
+         }
+
+         & .composition-item {
+            max-width: 300px;
+            justify-items: center;
+
+            & .composition-item-info {
+               gap: 15px;
+
+               & img {
+                  width: 70px;
+                  height: 100px;
+               }
+
+               & p {
+                  font-size: 22px;
+               }
+            }
+
+            & button {
+               width: 80%;
+               height: 30px;
+               font-size: 24px;
+               border-radius: 10px;
+            }
+         }
+
+         & .composition-img {
+            & img {
+               width: 200px;
+               height: 300px;
+            }
+         }
+      }
+
+      & .carusel {
+         & .carusel-wrapper {
+            & .comment {
+               padding: 30px;
+
+               & .user-name {
+                  font-size: 38px;
+               }
+
+               & .user-comment {
+                  font-size: 30px;
+               }
+            }
+         }
+      }
+
+      & .promo-2 {
+         & .promo-2-info {
+            gap: 10px;
+
+            & .promo-2-description {
+               & .promo-2-description-text {
+                  font-size: 26px;
+               }
+            }
+         }
+
+         & .promo-2-characteristic {
+            & li {
+               font-size: 24px;
+            }
+         }
+      }
+
+      & .order {
+         & .order-wrapper {
+            & .product-name {
+               font-size: 44px;
+            }
+
+            & .order-form {
+               display: grid;
+
+               & .order-price {
+                  width: 100%;
+
+                  & .order-img-wrapper {
+                     width: 500px;
+                     height: 500px;
+
+                     & .order-img {
+                        width: 270px;
+                        height: 430px;
+                     }
+                  }
+
+                  & .prices {
+                     width: 300px;
+                     height: 70px;
+
+                     & .old-prcie {
+                        font-size: 22px;
+                     }
+
+                     & .new-price {
+                        font-size: 26px;
+                     }
+                  }
+               }
+
+               & .order-form-info {
+                  width: 100%;
+
+                  & label {
+                     font-size: 30px;
+                  }
+
+                  & input {
+                     width: 400px;
+                     height: 40px;
+                     padding: 20px;
+                     font-size: 22px;
+                  }
+
+                  & button {
+                     width: 300px;
+                     height: 38px;
+                     font-size: 20px;
+                  }
+               }
+            }
+         }
+      }
    }
 }
