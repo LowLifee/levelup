@@ -95,7 +95,7 @@ window.addEventListener('DOMContentLoaded', () => {
       // Позиционирование подсказки
       tooltip.style.position = 'absolute';
       tooltip.style.top = `${input.offsetTop - 30}px`; // 5px отступ сверху
-      tooltip.style.right = `${input.offsetWidth + 5}px`; // 5px отступ справа
+      tooltip.style.right = `${input.offsetWidth - 250}px`; // 5px отступ справа
       tooltip.style.backgroundColor = '#fff'; // Фон подсказки
       tooltip.style.padding = '5px';
       tooltip.style.borderRadius = '5px';

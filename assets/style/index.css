@@ -48,6 +48,7 @@ input[type="number"] {
    display: grid;
    justify-items: center;
    padding: 0 70px;
+   overflow-x: hidden;
 
    & .promo {
       padding-top: 40px;
@@ -72,6 +73,7 @@ input[type="number"] {
          font-weight: 600;
          letter-spacing: 1px;
          color: #e0914b;
+         width: max-content;
       }
 
       & .promo-info {
@@ -102,19 +104,20 @@ input[type="number"] {
             z-index: 1;
 
             & .promo-info-text-description {
-               text-align: center;
+               display: grid;
+               justify-items: center;
 
                & .promo-info-title {
                   font-size: 24px;
                   font-weight: 600;
                   letter-spacing: 1px;
+                  width: max-content;
                }
 
                & p {
                   font-size: 24px;
                   text-align: start;
                   padding: 20px;
-                  border-radius: 18px;
                }
             }
 
@@ -140,39 +143,40 @@ input[type="number"] {
          gap: 50px;
          background: rgba(243, 255, 222, 0.45);
          padding: 30px;
-      }
+         max-height: 1120px;
 
-      & .composition-item {
-         display: grid;
-         justify-content: space-between;
-         max-width: 600px;
-         min-height: 180px;
-         gap: 10px;
+         & .composition-item {
+            display: grid;
+            justify-content: space-between;
+            max-width: 600px;
+            min-height: 180px;
+            gap: 10px;
 
-         & .composition-item-info {
-            display: flex;
-            gap: 20px;
-            align-items: center;
+            & .composition-item-info {
+               display: flex;
+               gap: 20px;
+               align-items: center;
 
-            & p {
-               & .more {
-                  text-decoration: underline;
-                  cursor: pointer;
-                  color: #e0914b;
+               & p {
+                  & .more {
+                     text-decoration: underline;
+                     cursor: pointer;
+                     color: #e0914b;
+                  }
+               }
+
+               & img {
+                  width: 70px;
+                  height: 100px;
                }
             }
 
-            & img {
-               width: 70px;
-               height: 100px;
+            & button {
+               width: 100%;
+               height: 50px;
+               border-radius: 12px;
+               font-size: 24px;
             }
-         }
-
-         & button {
-            width: 100%;
-            height: 50px;
-            border-radius: 12px;
-            font-size: 24px;
          }
       }
    }
@@ -329,7 +333,7 @@ input[type="number"] {
          & .order-form {
             display: flex;
             gap: 80px;
-            justify-content: space-between;
+            justify-content: space-around;
             margin-top: 30px;
 
             & .order-price {
@@ -438,229 +442,265 @@ input[type="number"] {
    }
 }
 
-@media (min-width: 768px) {
+@media screen and (max-width: 1225px) {
    .wrapper {
-      padding: 0 50px;
-
-      & .carusel {
-         & .carusel-wrapper {
-            & .comment {
-               padding: 30px;
-            }
-         }
-      }
-   }
-}
-
-@media screen and (min-width: 480px) and (max-width: 768px) {
-   .wrapper {
-      padding: 0 50px;
+      width: 100%;
 
       & .promo {
-         & .promo-info {
-            & .promo-info-img {
-               width: 350px;
+         margin-left: 0;
+         max-width: 800px;
+         padding: 20px;
 
-               & img {
-                  width: 170px;
-                  height: 250px;
-               }
+         & .background-blue {
+            right: -205px;
+            width: 72%;
+         }
+
+         & .promo-info {
+            gap: 40px;
+
+            & .promo-info-img {
+               width: 380px;
             }
 
             & .promo-info-text {
-               width: 350px;
-               height: 250px;
-               gap: 30px;
-
-               & .promo-info-text-description {
-                  & .promo-info-title {
-                     font-size: 18px;
-                  }
-
-                  & p {
-                     font-size: 18px;
-                  }
-               }
-            }
-
-            & button {
-               width: 170px;
-               height: 45px;
-               font-size: 20px;
-               border-radius: 10px;
+               width: 380px;
             }
          }
       }
 
       & .composition {
-         gap: 60px;
+         width: 100%;
+         gap: 80px;
 
          & .composition-items {
-            gap: 40px;
-            padding: 15px;
-         }
-
-         & .composition-item {
-            max-width: 300px;
-            justify-items: center;
+            max-width: 280px;
 
             & .composition-item-info {
                gap: 15px;
 
-               & img {
-                  width: 45px;
-                  height: 70px;
-               }
-
                & p {
-                  font-size: 18px;
+                  font-size: 13px;
                }
-            }
-
-            & button {
-               width: 80%;
-               height: 30px;
-               font-size: 20px;
-               border-radius: 10px;
             }
          }
 
          & .composition-img {
             & img {
-               width: 170px;
-               height: 250px;
+               width: 160px;
+               height: 215px;
             }
          }
       }
 
       & .carusel {
+         width: 800px;
+         margin-left: 10%;
+
          & .carusel-wrapper {
             & .comment {
+               height: max-content;
                padding: 30px;
-            }
-         }
-      }
-   }
-}
-
-@media screen and (max-width: 480px) {
-   .wrapper {
-      padding: 0 30px;
-
-      & .promo {
-         & .promo-title {
-            font-size: 44px;
-            z-index: 1;
-         }
-
-         & .promo-info {
-            & .promo-info-img {
-               width: 450px;
-
-               & img {
-                  width: 200px;
-                  height: 300px;
-               }
-            }
-
-            & .promo-info-text {
-               width: 450px;
-               height: 250px;
-               gap: 30px;
-
-               & .promo-info-text-description {
-                  & .promo-info-title {
-                     font-size: 24px;
-                  }
-
-                  & p {
-                     font-size: 24px;
-                  }
-               }
-            }
-
-            & button {
-               width: 200px;
-               height: 45px;
-               font-size: 26px;
-               border-radius: 10px;
-            }
-         }
-      }
-
-      & .composition {
-         gap: 40px;
-
-         & .composition-items {
-            gap: 40px;
-            padding: 15px;
-         }
-
-         & .composition-item {
-            max-width: 300px;
-            justify-items: center;
-
-            & .composition-item-info {
-               gap: 15px;
-
-               & img {
-                  width: 70px;
-                  height: 100px;
-               }
-
-               & p {
-                  font-size: 22px;
-               }
-            }
-
-            & button {
-               width: 80%;
-               height: 30px;
-               font-size: 24px;
-               border-radius: 10px;
-            }
-         }
-
-         & .composition-img {
-            & img {
-               width: 200px;
-               height: 300px;
-            }
-         }
-      }
-
-      & .carusel {
-         & .carusel-wrapper {
-            & .comment {
-               padding: 30px;
-
-               & .user-name {
-                  font-size: 38px;
-               }
 
                & .user-comment {
                   font-size: 30px;
-                  width: 800px;
+                  width: 680px;
                }
             }
          }
       }
 
       & .promo-2 {
+         max-width: 800px;
+
+
+         & .background-b {
+            right: -205px;
+            width: 72%;
+         }
+
+         & .promo-2-info {
+            gap: 50px;
+            justify-content: start;
+            justify-items: start;
+
+            & .promo-2-img {
+               & img {
+                  width: 332px;
+                  height: 400px;
+               }
+            }
+         }
+      }
+
+      & .order {
+         width: 800px;
+         padding: 190px 0 20px 0;
+         min-height: auto;
+
+         & .background-y {
+            left: -205px;
+            width: 72%;
+         }
+
+         & .order-wrapper {
+            gap: 5px;
+
+            & .order-form {
+               gap: 5px;
+            }
+         }
+      }
+   }
+}
+
+@media screen and (max-width: 867px) {
+   .wrapper {
+      padding: 0 10px;
+
+      & .promo {
+         max-width: 600px;
+         & .background-blue {
+            right: -130px;
+            width: 66%;
+            height: 110%;
+         }
+
+         & .promo-title {
+            font-size: 44px;
+            z-index: 1;
+         }
+
+         & .promo-info {
+            gap: 15px;
+
+            & .promo-info-img {
+               width: 292px;
+
+               & img {
+                  width: 150px;
+                  height: 210px;
+               }
+            }
+
+            & .promo-info-text {
+               width: 292px;
+               height: 250px;
+               gap: 10px;
+
+               & .promo-info-text-description {
+                  & .promo-info-title {
+                     font-size: 18px;
+                  }
+
+                  & p {
+                     font-size: 18px;
+                  }
+               }
+            }
+
+            & button {
+               width: 200px;
+               height: 45px;
+               font-size: 24px;
+               border-radius: 10px;
+            }
+         }
+      }
+
+      & .composition {
+         gap: 30px;
+         max-width: 600px;
+         position: relative;
+
+         & .composition-items {
+            gap: 40px;
+            padding: 15px;
+            padding: 15px;
+         }
+
+         & .composition-item {
+            max-width: 250px;
+            justify-items: center;
+            min-height: 250px;
+
+            & .composition-item-info {
+               gap: 15px;
+
+               & img {
+                  width: 50px;
+                  height: 80px;
+               }
+
+               & p {
+                  font-size: 12px;
+               }
+            }
+
+            & button {
+               width: 60%;
+               height: 20px;
+               font-size: 18px;
+               border-radius: 10px;
+            }
+         }
+
+         & .composition-img {
+            & img {
+               width: 100px;
+               height: 150px;
+            }
+         }
+      }
+
+      & .carusel {
+         max-width: 100%;
+         margin-left: 0px;
+
+         & .carusel-wrapper {
+            & .comment {
+               padding: 30px;
+               gap: 5px;
+               height: max-content;
+
+               & .user-name {
+                  font-size: 38px;
+               }
+
+               & .user-comment {
+                  font-size: 20px;
+                  width: 500px;
+               }
+            }
+         }
+      }
+
+      & .promo-2 {
+         max-width: 600px;
+
          & .promo-2-info {
             gap: 10px;
 
             & .promo-2-description {
+               width: 300px;
+
                & .promo-2-description-text {
-                  font-size: 26px;
+                  font-size: 12px;
                }
             }
          }
 
          & .promo-2-characteristic {
+            width: 80%;
             & li {
-               font-size: 24px;
+               font-size: 12px;
             }
+         }
+
+         & button {
+            width: 25%;
+            height: 50px;
+            font-size: 18px;
          }
       }
 
@@ -722,6 +762,255 @@ input[type="number"] {
                      width: 300px;
                      height: 38px;
                      font-size: 20px;
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+@media screen and (max-width: 550px) {
+   .wrapper {
+      overflow-y: visible;
+      justify-items: start;
+      padding: 0 5px;
+      max-width: 550px;
+
+      & .promo {
+         max-width: 400px;
+
+         & .background-blue {
+            width: 50%;
+            right: -10px;
+            top: 0px;
+            height: 95%;
+         }
+
+         & .promo-info {
+            gap: 10px;
+            padding-top: 40px;
+            position: relative;
+            left: -30px;
+
+            & .promo-info-img {
+               width: 200px;
+
+               & img {
+                  width: 150px;
+                  height: 200px;
+               }
+            }
+
+            & .promo-info-text {
+               gap: 15px;
+               width: 200px;
+
+               & .promo-info-text-description {
+                  & .promo-info-title {
+                     font-size: 16px;
+                     font-weight: 600;
+                     letter-spacing: 1px;
+                  }
+
+                  & p {
+                     font-size: 12px;
+                     padding: 10px;
+                  }
+               }
+
+               & button {
+                  font-size: 16px;
+                  width: 150px;
+                  height: 30px;
+                  border-radius: 6px;
+               }
+            }
+         }
+      }
+
+      & .composition {
+         max-width: 400px;
+         position: relative;
+         left: 5px;
+         padding-top: 80px;
+
+         & .composition-items {
+            gap: 10px;
+            max-width: 230px;
+
+            & .composition-item {
+               max-width: 100%;
+               min-height: 200px;
+
+               & .composition-item-info {
+                  gap: 10px;
+
+                  & img {
+                     width: 30px;
+                     height: 50px;
+                  }
+
+                  & p {
+                     font-size: 9px;
+                  }
+               }
+
+               & button {
+                  width: 70px;
+                  height: 20px;
+                  font-size: 10px;
+               }
+            }
+         }
+
+         & .composition-img {
+            & img {
+               width: 60px;
+               height: 80px;
+            }
+         }
+      }
+
+      & .carusel {
+         max-width: 400px;
+         margin-left: 5px;
+         padding-top: 80px;
+
+         & .carusel-wrapper {
+            & .comment {
+               gap: 5px;
+
+               & .comment-user-img {
+                  width: 150px;
+                  height: 150px;
+               }
+
+               & .user-name {
+                  font-size: 24px;
+               }
+
+               & .user-comment {
+                  width: 65%;
+                  font-size: 12px;
+               }
+            }
+         }
+      }
+
+      & .promo-2 {
+         max-width: 400px;
+         padding-top: 80px;
+         position: relative;
+
+         & .background-b {
+            top: 50px;
+            right: -25px;
+            width: 60%;
+            height: 93%;
+         }
+
+         & .promo-2-info {
+            gap: 20px;
+
+            & .promo-2-img {
+               & img {
+                  width: 140px;
+                  height: 160px;
+               }
+            }
+
+            & .promo-2-description {
+               width: 250px;
+
+               & .promo-2-description-text {
+                  font-size: 12px;
+                  font-weight: 400;
+               }
+            }
+         }
+
+         & .promo-2-characteristic {
+            width: 100%;
+
+            & li {
+               font-size: 9px;
+            }
+         }
+
+         & button {
+            width: 30%;
+            height: 30px;
+            font-size: 12px;
+            border-radius: 3px;
+         }
+      }
+
+      & .order {
+         max-width: 400px;
+         padding-top: 80px;
+
+         & .background-y {
+            width: 100%;
+            height: 90%;
+         }
+
+         & .order-wrapper {
+            gap: 10px;
+
+            & .order-timer {
+               & .order-time {
+                  font-size: 30px;
+               }
+            }
+
+            & .order-form {
+               gap: 30px;
+               justify-items: center;
+
+               & .order-price {
+                  gap: 10px;
+                  max-width: 50%;
+
+                  & .order-img-wrapper {
+                     width: 140px;
+                     height: 140px;
+
+                     & .order-img {
+                        width: 80px;
+                        height: 110px;
+                     }
+                  }
+
+                  & .prices {
+                     gap: 5px;
+                     width: 140px;
+                     height: 40px;
+                     border-radius: 6px;
+                  }
+               }
+
+               & .order-form-info {
+                  gap: 5px;
+                  width: 300px;
+
+                  & input {
+                     width: 80%;
+                     height: 30px;
+                     position: relative;
+                     padding: 5px;
+                     font-size: 12px;
+                  }
+
+                  & label {
+                     font-size: 12px;
+                  }
+
+                  & button {
+                     width: 90%;
+                     height: 30px;
+                     border-radius: 18px;
+                     font-size: 12px;
                   }
                }
             }
