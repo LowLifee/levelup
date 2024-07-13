@@ -452,7 +452,7 @@ input[type="number"] {
    }
 }
 
-@media (min-width: 480px) and (max-width: 768px) {
+@media screen and (min-width: 480px) and (max-width: 768px) {
    .wrapper {
       padding: 0 50px;
 
@@ -543,7 +543,7 @@ input[type="number"] {
    }
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
    .wrapper {
       padding: 0 30px;
 
