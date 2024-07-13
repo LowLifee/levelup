@@ -13,6 +13,16 @@ li {
    list-style: none;
 }
 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+   -webkit-appearance: none;
+   margin: 0;
+}
+
+input[type="number"] {
+   -moz-appearance: textfield;
+}
+
 .order-btn {
    border: none;
    border-radius: 18px;
@@ -142,7 +152,15 @@ li {
          & .composition-item-info {
             display: flex;
             gap: 20px;
-            align-items: start;
+            align-items: center;
+
+            & p {
+               & .more {
+                  text-decoration: underline;
+                  cursor: pointer;
+                  color: #e0914b;
+               }
+            }
 
             & img {
                width: 70px;
@@ -304,7 +322,7 @@ li {
 
             & .order-time {
                font-size: 24px;
-               color: #e3dfdf;
+               color: #1e1e1e;
             }
          }
 
@@ -649,6 +667,10 @@ li {
          & .order-wrapper {
             & .product-name {
                font-size: 44px;
+            }
+
+            & .order-timer {
+               font-size: 36px;
             }
 
             & .order-form {
